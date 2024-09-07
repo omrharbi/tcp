@@ -1,6 +1,14 @@
 package main
 
-
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"net"
+	"strings"
+	"sync"
+	"time"
+)
 
 var (
 	clients     = make(map[net.Conn]string)
