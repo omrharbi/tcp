@@ -16,26 +16,26 @@ var (
 	chatHistory []string // This will store the history of all chat messages
 )
 
-func main() {
-	//addr := "localhost:8888"
-	l, err := net.Listen("tcp", ":8091")
-	if err != nil {
-		log.Println("Couldn't listen to network", err)
-		return
-	}
-	defer l.Close()
+// func main() {
+// 	//addr := "localhost:8888"
+// 	l, err := net.Listen("tcp", ":8091")
+// 	if err != nil {
+// 		log.Println("Couldn't listen to network", err)
+// 		return
+// 	}
+// 	defer l.Close()
 
-	fmt.Println("Server started on", "8091")
+// 	fmt.Println("Server started on", "8091")
 
-	for {
-		conn, err := l.Accept()
-		if err != nil {
-			log.Println("Error while accepting connection:", err)
-			continue
-		}
-		go handleConnect(conn)
-	}
-}
+// 	for {
+// 		conn, err := l.Accept()
+// 		if err != nil {
+// 			log.Println("Error while accepting connection:", err)
+// 			continue
+// 		}
+// 		go handleConnect(conn)
+// 	}
+// }
 
 func handleConnect(conn net.Conn) {
 	defer conn.Close()
